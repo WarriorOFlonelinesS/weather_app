@@ -1,0 +1,5 @@
+@mixin font-display($ft,$fw,$ff){
+    font-size: $ft;
+    font-weight: $fw;
+    font-family: $ff;
+}
