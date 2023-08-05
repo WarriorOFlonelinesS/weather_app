@@ -7,23 +7,23 @@ loadWeather
 )
 async function loadWeather(e){
 
-
+  e.preventDefault()
   weatherBlock.innerHTML = 
   `<div class='weather__loading>
         <img src = "./loading.gif" alt = "Loading...">
     </div>`
     var apiKey = 'bb0808955e9c9cac837e8cbdf68de3a8';
 const formData = new FormData(form);
+
 let city = formData.get('city')
-  
-let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&units=metric&appid=${apiKey}`;
+let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&units=metric&appid=${apiKey}&lang=en`;
 
 const response = await fetch(url, {method:'GET',
 });
     const responseResult = await response.json();
 
     if(response.ok){
-        getWeather(responseResult);
+        getWeather(responseResult, city);
 
     }else{
         weatherBlock.innerHTML = responseResult.message;
@@ -31,8 +31,9 @@ const response = await fetch(url, {method:'GET',
 }
 
 
-function getWeather(data){
-    const location = data.name;
+function getWeather(data, nameOfCity){
+  console.log(data)
+    const location = nameOfCity;
     const temp = Math.round(data.main.feels_like);
     const feelsLike = Math.round(data.main.feels_like);
     const weatherStatus = data.weather[0].main;
