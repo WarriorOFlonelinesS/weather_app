@@ -40,8 +40,12 @@ function getWeather(data, nameOfCity){
     const weatherIcon = data.weather[0].icon;
 
     const template = `
+    <div class='weather-holder'> 
+    <h3 class='weather__title'> Today </h3>
+ </div>
+<div class="weather__main">
     <div class="weather__header">
-    <div class="weather__main">
+ 
       <div class="weather__city">${location}</div>
       <div class="weather__status">${weatherStatus}</div>
     </div>
