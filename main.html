@@ -12,35 +12,36 @@
 <body>
   <div class="main">
       <div class="container">
-        <form action="#" id="form" class="weather__form">
-          <input type="text" name="city" value="Dnipro" class="form__input">
-          <input type="submit" id="submit" class='form__submit' value="Поиск">
-        </form>
-        <div id="weather" class="weather">
-          <div class='weather-holder'> 
-            <h3 class='weather__title'> Today </h3>
-         </div>
-        <div class="weather__main">
-            <div class="weather__header">
-         
-              <div class="weather__city">${location}</div>
-              <div class="weather__status">${weatherStatus}</div>
-            </div>
-            <div class="weather__icons">
-              <img src="https://openweathermap.org/img/w/${weatherIcon}.png" alt="">
-            </div>
+        <div class="main-holder">
+            <form action="#" id="form" class="weather__form">
+              <input type="text" name="city" placeholder="Enter the name of your city" class="form__input">
+              <input type="submit" id="submit" class='form__submit' value="Поиск">
+            </form>
+            <div id="weather" class="weather">
+                <div class='weather-holder'> 
+                  <h3 class='weather__title'> Today </h3>
+               </div>
+              <div class="weather__main">
+                  <div class="weather__header">
+               
+                    <div class="weather__city">Dnipro</div>
+                    <div class="weather__status">Clean</div>
+                  </div>
+                  <div class="weather__icons">
+                    <img src="./free-png 1.svg" alt="">
+                  </div>
+                </div>
+                <div class="weather__temp">26</div>
+                <div class="wether__feels-like">30</div>`
           </div>
-          <div class="weather__temp">${temp}</div>
-          <div class="wether__feels-like">${feelsLike}</div>`
-        </div>
-        <div class="main-buttons">
-          <button class="main__btn _active">Today</button>
-          <button class="main__btn">6 days</button>
-          <button class="main__btn">10 days</button>
+          <div class="main-buttons">
+            <button class="main__btn _active">Today</button>
+            <button class="main__btn">6 days</button>
+            <button class="main__btn">10 days</button>
+          </div>
         </div>
       </div>
-      
   </div>
-  <script src="./js/app.js"></script>
+  <!-- <script src="./js/app.js"></script> -->
 </body>
 </html>
