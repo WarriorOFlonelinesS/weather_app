@@ -1,25 +1,19 @@
-const weatherBlock = document.querySelector('#weather');
+const weatherBlock = document.getElementById('weather');
 const submit = document.getElementById('submit')
 const form = document.getElementById('form')
 
-form.addEventListener('submit', 
-loadWeather
-)
+form.addEventListener('submit', loadWeather)
 async function loadWeather(e){
+    e.preventDefault()
 
-  e.preventDefault()
-  weatherBlock.innerHTML = 
-  `<div class='weather__loading>
-        <img src = "./loading.gif" alt = "Loading...">
-    </div>`
     var apiKey = 'bb0808955e9c9cac837e8cbdf68de3a8';
-const formData = new FormData(form);
+    const formData = new FormData(form);
 
-let city = formData.get('city')
-let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&units=metric&appid=${apiKey}&lang=en`;
+  let city = formData.get('city')
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&units=metric&appid=${apiKey}&lang=en`;
 
-const response = await fetch(url, {method:'GET',
-});
+  const response = await fetch(url, {method:'GET',
+} );
     const responseResult = await response.json();
 
     if(response.ok){

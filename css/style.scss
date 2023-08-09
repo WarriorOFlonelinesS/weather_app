@@ -26,14 +26,22 @@ body,html{
     background: rgba(217, 217, 217, 0.17);
     backdrop-filter: blur(50px);
 }
+
+.main-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .weather__loading{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 468px;
 }
 
 .weather__loading img{
-    max-width: 50px;
+    max-width: 150px;
 }
 
 .weather__header{
@@ -69,7 +77,6 @@ body,html{
 }
 
 .weather__form{
-
     display: flex;
     justify-content: center;
  
@@ -87,7 +94,7 @@ margin-bottom: 10px;
 .main-buttons{
     display: flex;
     justify-content: center;
-    
+    margin-left: 53px;
 }
 
 .main__btn{
@@ -97,6 +104,8 @@ margin-bottom: 10px;
     border: 0.5px solid #FFF;
     background: rgba(217, 217, 217, 0.17);
     color: white;
+    margin-right: 13px;
+
 }
 
 .main__btn._active{
@@ -104,6 +113,7 @@ margin-bottom: 10px;
     border: 2px solid #FFF;
     background: rgba(255, 250, 250, 0.26);
 }
+
 // .search {
 //     width: 812px; /* Ширина поля с кнопкой */
 //     background-color: white;
