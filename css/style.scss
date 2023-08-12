@@ -25,8 +25,26 @@ body,html{
     border: 1px solid rgba(255, 255, 255, 0.41);
     background: rgba(217, 217, 217, 0.17);
     backdrop-filter: blur(50px);
+
+}
+.wether__title{
+    margin-bottom: -48px;
+    margin-top: 1px;
+    text-align: center;
+}
+.wether-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
+.weather-left{
+    margin-top: 91px;
+margin-right: 100px;
+}
+.weather-right{
+    margin-top: 100px;
+}
 .main-holder{
     display: flex;
     flex-direction: column;
@@ -37,19 +55,32 @@ body,html{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 468px;
+    height: 400px;
 }
 
 .weather__loading img{
     max-width: 150px;
 }
 
-.weather__header{
-    display: flex;
+.wether__feels-like{
+    font-size: 20px;
 }
 
 .weather__main{
     flex: 1 1 auto;
+}
+
+.weather-content{
+    display: none;
+}
+
+.weather-content.active{
+    display: block;
+}
+
+.content-holder{
+    display: flex;
+    justify-content: space-between;
 }
 
 .weather__city{
@@ -59,7 +90,7 @@ body,html{
 }
 
 .weather__status{
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 20px;
 }
 
@@ -95,6 +126,7 @@ margin-bottom: 10px;
     display: flex;
     justify-content: center;
     margin-left: 53px;
+    margin-top: 10px;
 }
 
 .main__btn{
@@ -105,7 +137,6 @@ margin-bottom: 10px;
     background: rgba(217, 217, 217, 0.17);
     color: white;
     margin-right: 13px;
-
 }
 
 .main__btn._active{
@@ -114,28 +145,37 @@ margin-bottom: 10px;
     background: rgba(255, 250, 250, 0.26);
 }
 
-// .search {
-//     width: 812px; /* Ширина поля с кнопкой */
-//     background-color: white;
+.main__btn:hover{
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid #FFF;
+    background: rgba(255, 250, 250, 0.077);
+}
 
-//     min-height: 60px; /* Минимальная высота */
-//     border-radius: 94px;
-//     margin: 50px auto;
-//    }
-//    input[type="search"] {
-//     border: none; /* Убираем рамку */
-//     outline: none; /* Убираем свечение в Chrome и Safari/* Убираем рамку в Chrome и Safari */
-//     width: 738.939px;
-//     vertical-align: middle; /* Выравнивание по середине */
-//     font-size: 34px;
-//     border-radius: 94px;
-//     margin-top: -20px;
-//     margin-left: 10px;
-//    }
-//    input[type="submit"] {
-//     width: 50px; /* Ширина кнопки */
-//     height: 45px; /* Высота кнопки */
-//     border: none; /* Убираем рамку */
-//     background: url('../Vector.svg') no-repeat 10px 5px;  
-//    }
+.weather__form {
+    width: 490px;
+    background-color: white;
+    min-height: -25px;
+    border-radius: 94px;
+    margin: 12px auto;
+}
+   
+.form__input {
+    border: none;
+    outline: none;
+    width: 576.939px;
+    vertical-align: middle;
+    font-size: 15px;
+    border-radius: 94px;
+    margin-top: 3px;
+    margin-left: 10px;
+   }
+   input[type="submit"] {
+    color: transparent;
+    width: 65px;
+    height: 45px; 
+    border: none; 
+    background: url('../Vector.svg') no-repeat 10px 5px;  
+    cursor: pointer;
+   }
 
