@@ -57,6 +57,10 @@ body, html {
   margin-top: 100px;
 }
 
+.weather-right img {
+  width: 100px;
+}
+
 .main-holder {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -95,6 +99,14 @@ body, html {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+.weather-content {
+  display: none;
+}
+
+.content-item .weather__status {
+  font-size: 15px;
 }
 
 .weather-content {
@@ -216,4 +228,45 @@ input[type=submit] {
   border: none;
   background: url("../Vector.svg") no-repeat 10px 5px;
   cursor: pointer;
+}
+
+.content-items {
+  margin-top: 80px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (168px)[3];
+  grid-template-columns: repeat(3, 168px);
+}
+
+.content-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.item__title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.content-item img {
+  width: 74.641px;
+  height: 73.654px;
+}
+
+.content-item .weather__temp {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
