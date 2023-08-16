@@ -1,6 +1,7 @@
+import loadWeather from './response.js'
 const weatherBlock = document.getElementById('weather');
 const weatherBlock2 = document.querySelector('.content-items')
-const submit = document.getElementById('submit');
+
 const form = document.getElementById('form');
 const buttons = document.querySelectorAll('.main__btn');
 const contents = document.querySelectorAll('.weather-content');
@@ -15,32 +16,6 @@ buttons.forEach((btn,index) =>{
   })
   }
 )
-
-form.addEventListener('submit', loadWeather);
-
-async function loadWeather(e){
-try{
-    e.preventDefault();
-    var apiKey = 'bb0808955e9c9cac837e8cbdf68de3a8';
-    const formData = new FormData(form);
-
-    let city = formData.get('city')
-    let url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=en&units=metric&appid=${apiKey}`;
-
-    const response = await fetch(url, {method:'GET',
-    } );
-    const responseResult = await response.json();
-    if(response.ok){
-        getWeather(responseResult, city);
-    }else{
-      weatherBlock.innerHTML =  responseResult.message
-    }
-  }
-  catch (error){
-    console.error('error:', error)
-  }
-}
-
 
 function getWeather(data, nameOfCity){
   for(let load of loading){
@@ -72,7 +47,7 @@ function getWeather(data, nameOfCity){
     </div>
   </div>`
   weatherBlock.innerHTML = template;
-  forecastArray = Array.from(forecastList)
+ const forecastArray = Array.from(forecastList)
   for (let i = 0; i <= forecastArray.length-1; i+=7){
     
     const date = new Date(forecastArray[i].dt * 1000).toLocaleString().slice(0,10);
@@ -91,3 +66,4 @@ function getWeather(data, nameOfCity){
   console.log(forecastArray[0])
 }
 
+export default getWeather
