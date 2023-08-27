@@ -17,7 +17,7 @@ try{
     if(response.ok){
         getWeather(responseResult, city);
     }else{
-      weatherBlock.innerHTML =  responseResult.message
+      weatherBlock.innerHTML =  `<h2>${responseResult.message}<h2>`
     }
   }
   catch (error){
